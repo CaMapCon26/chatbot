@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Book Manager</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quản lý sách</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tiêu Đề</th>
+                <th>Số Lượng</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in books %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>
+                
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div>
+        <h2>Thêm sách</h2>
+        <form action="/add" method="POST">
+            <input type="text" name="id" required placeholder="ID" />
+            <input type="text" name="name" required placeholder="Tên sách" />
+            <input type="number" name="quantity" required placeholder="Số lượng" />
+            <button type="submit">Thêm</button>
+        </form>
+    </div>
+</body>
+</html>
