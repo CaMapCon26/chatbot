@@ -40,7 +40,7 @@ def create_context_message(context_text, tone=""):
 def initialize_openai():
     """Khởi tạo client OpenAI với khóa API.
     Đầu ra là client OpenAI đã khởi tạo"""
-    api_key = ó.getenv("OPENAI_API_KEY")
+    api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         st.error("Vui lòng cung cấp khóa API OpenAI trong biến môi trường OPENAI_API_KEY.")
         st.stop()
